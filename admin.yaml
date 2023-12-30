@@ -39,7 +39,7 @@ data:
       - system:nodes
       rolearn: arn:aws:iam::474115038571:role/eksctl-eks-spot-cluster-nodegroup--NodeInstanceRole-4RKeIbrOWzlU
       username: system:node:{{EC2PrivateDNSName}}
-  mapUsers:
+  mapUsers: |  
     - groups: 
       - roboshop-admin 
       userarn: arn:aws:iam::474115038571:user/ramesh
