@@ -53,7 +53,7 @@ kind: ClusterRole
 metadata:
   name: roboshop-cluster-reader
 rules:
-- apiGroups: ["v1", "apps/v1", ""] # Remove the unnecessary space in the array
+- apiGroups: ["v1", "apps/v1", " "] # Remove the unnecessary space in the array
   resources: ["secrets", "nodes", "namespaces", "persistentvolumes"]
   verbs: ["get", "watch", "list"]
 ---
