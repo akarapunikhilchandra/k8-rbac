@@ -51,4 +51,16 @@ metadata:
   namespace: kube-system
   resourceVersion: "1222"
   uid: 6d59c290-8576-4a1e-92d4-d0ef8ccfa4c1
-
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # "namespace" omitted since ClusterRoles are not namespaced
+  name: roboshop-cluster-reader
+rules:
+- apiGroups: ["v1","apps/v1"," "]
+  #
+  # at the HTTP level, the name of the resource for accessing Secret
+  # objects is "secrets"
+  resources: ["secrets","nodes","namespaces","persistentvolumes"]
+  verbs: ["get", "watch", "list"]
